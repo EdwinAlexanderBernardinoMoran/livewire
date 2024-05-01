@@ -8,12 +8,14 @@
         <x-slot name="content">
             <div class="mb-4">
                 <x-label>Titulo del Post</x-label>
-                <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model='title'></x-input>
+                <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model.live='title'></x-input>
+                <x-input-error for="title"></x-input-error>
             </div>
 
             <div class="mb-4">
                 <x-label>Contenido del Post</x-label>
-                <textarea class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" rows="6" wire:model='content'></textarea>
+                <textarea class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" rows="6" wire:model.live='content'></textarea>
+                <x-input-error for="content"></x-input-error>
             </div>
         </x-slot>
         <x-slot name="footer">
