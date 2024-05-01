@@ -19,5 +19,12 @@ class CreatePost extends Component
             'title' => $this->title,
             'content' => $this->content,
         ]);
+
+        $this->reset(['title', 'content']);
+        // Emitiendo eventos
+        $this->dispatch('render');
+        $this->dispatch('alert', ['icon' =>'success', 'title' => '¡Bien Hecho!', 'text' => 'El Post fue creado exitosamente!']);
+
+        $this->open = false;
     }
 }
