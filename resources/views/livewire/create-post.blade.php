@@ -1,0 +1,28 @@
+<div>
+    {{-- Because she competes with no one, no one can compete with her. --}}
+    <x-danger-button wire:click="$set('open', true)">Crear nuevo Post</x-danger-button>
+
+    {{-- Modal --}}
+    <x-dialog-modal wire:model='open'>
+        <x-slot name="title">Nuevo Post</x-slot>
+        <x-slot name="content">
+            <div class="mb-4">
+                <x-label>Titulo del Post</x-label>
+                <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model='title'></x-input>
+            </div>
+
+            <div class="mb-4">
+                <x-label>Contenido del Post</x-label>
+                <textarea class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" rows="6" wire:model='content'></textarea>
+            </div>
+        </x-slot>
+        <x-slot name="footer">
+            <x-secondary-button class="mr-1" wire:click="$set('open', false)">
+                Cancelar
+            </x-secondary-button>
+            <x-danger-button wire:click='save'>
+                Crear Post
+            </x-danger-button>
+        </x-slot>
+    </x-dialog-modal>
+</div>
