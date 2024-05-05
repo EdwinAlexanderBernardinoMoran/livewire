@@ -8,13 +8,13 @@
         <x-slot name="content">
             <div class="mb-4">
                 <x-label>Titulo del Post</x-label>
-                <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model.live='title'></x-input>
+                <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model='title'></x-input>
                 <x-input-error for="title"></x-input-error>
             </div>
 
             <div class="mb-4">
                 <x-label>Contenido del Post</x-label>
-                <textarea class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" rows="6" wire:model.live='content'></textarea>
+                <textarea class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" rows="6" wire:model='content'></textarea>
                 <x-input-error for="content"></x-input-error>
             </div>
         </x-slot>
@@ -22,7 +22,13 @@
             <x-secondary-button class="mr-1" wire:click="$set('open', false)">
                 Cancelar
             </x-secondary-button>
-            <x-danger-button wire:click='save'>
+            {{-- <x-danger-button wire:click='save' wire:loading.remove wire:target='save'>
+                Crear Post
+            </x-danger-button>
+
+            <span wire:loading wire:target='save'>Cargando ...</span> --}}
+
+            <x-danger-button wire:click='save' wire:loading.attr='disable'  wire:target='save' class="disabled:opacity-25">
                 Crear Post
             </x-danger-button>
         </x-slot>

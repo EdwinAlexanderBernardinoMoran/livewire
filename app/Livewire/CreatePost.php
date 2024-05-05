@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class CreatePost extends Component
 {
-    public $open = false;
+    public $open = true;
 
     #[Validate('required|max:10')]
     public $title;
@@ -21,9 +21,10 @@ class CreatePost extends Component
         return view('livewire.create-post');
     }
 
-    public function updated($propertyName){
-        $this->validateOnly($propertyName);
-    }
+    // Validacion en tiempo real...
+    // public function updated($propertyName){
+    //     $this->validateOnly($propertyName);
+    // }
 
     public function save(){
 
