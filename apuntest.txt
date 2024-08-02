@@ -1,0 +1,9 @@
+- No se deben utilizar los componentes de livewire cuando queremos reutilizar ciertas porciones de codigo (un alerta, tabla o cualquier seccion que se repita en el sitio web)
+
+- Para reutilizar los porciones de codigo se utilizan los componentes de blade.
+
+- Cualquier propiedad dentro de esta clase puede ser accedida dentro del componente blade
+
+- Si queremos asignar en una variable diferente a la que pasamos por el componente como parametro podemos utilizar el motodo mount() le pasamos como parametro la variable y definimos otra variable y le asignamos la variable que le pasamos como parametro al mount()
+
+- Si queremos que nuestro componente extienda otra plantilla diferente, podemos utilizar el metodo layout('nombre de la plantilla) este metodo layout() ira dentro del metodo render example: return view()->layout()
