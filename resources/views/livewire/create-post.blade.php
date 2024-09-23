@@ -6,6 +6,11 @@
     <x-dialog-modal wire:model='open'>
         <x-slot name="title">Nuevo Post</x-slot>
         <x-slot name="content">
+
+            @if ($image)
+                <img class="mb-4" src="{{$image->temporaryUrl()}}" alt="">
+            @endif
+
             <div class="mb-4">
                 <x-label>Titulo del Post</x-label>
                 <x-input type="text" class="w-full" placeholder="Titulo del Post ..." wire:model='title'></x-input>
@@ -18,10 +23,10 @@
                 <x-input-error for="content"></x-input-error>
             </div>
 
-            {{-- <div class="mb-4">
+            <div class="mb-4">
                 <x-input type='file' wire:model='image'></x-input>
                 <x-input-error for="image"></x-input-error>
-            </div> --}}
+            </div>
         </x-slot>
         <x-slot name="footer">
             <x-secondary-button class="mr-1" wire:click="$set('open', false)">
@@ -29,7 +34,7 @@
             </x-secondary-button>
 
             {{-- <x-danger-button wire:click='save' wire:loading.attr='disable'  wire:target='save' class="disabled:opacity-25"> --}}
-            <x-danger-button wire:click='save' wire:loading.remove wire:target='save'>
+            <x-danger-button wire:click='save' wire:loading.remove wire:target='save, image'>
                 Crear Post
             </x-danger-button>
 
