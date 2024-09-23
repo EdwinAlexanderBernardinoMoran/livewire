@@ -27,15 +27,14 @@
             <x-secondary-button class="mr-1" wire:click="$set('open', false)">
                 Cancelar
             </x-secondary-button>
-            {{-- <x-danger-button wire:click='save' wire:loading.remove wire:target='save'>
+
+            {{-- <x-danger-button wire:click='save' wire:loading.attr='disable'  wire:target='save' class="disabled:opacity-25"> --}}
+            <x-danger-button wire:click='save' wire:loading.remove wire:target='save'>
                 Crear Post
             </x-danger-button>
 
-            <span wire:loading wire:target='save'>Cargando ...</span> --}}
+            <span wire:loading wire:target='save'>Cargando ...</span>
 
-            <x-danger-button wire:click='save' wire:loading.attr='disable'  wire:target='save' class="disabled:opacity-25">
-                Crear Post
-            </x-danger-button>
         </x-slot>
     </x-dialog-modal>
 
