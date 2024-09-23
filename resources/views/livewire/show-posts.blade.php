@@ -12,12 +12,12 @@
         <div class="px-6 py-4 flex items-center">
             <x-input wire:model.live="search" class="flex-1 mr-4" placeholder="Busqueda por titulo o contenido"></x-input>
 
-            {{-- @livewire('create-post') --}}
+            @livewire('create-post')
         </div>
 
         @if ($posts->count())
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="w-24 cursor-pointer px-6 py-3" wire:click="order('id')">
                         ID
@@ -71,7 +71,7 @@
             <tbody>
                 @foreach ($posts as $post)
                 <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    class="bg-white border-b hover:bg-gray-50">
                     <td class="px-6 py-4">
                         {{ $post->id }}
                     </td>

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class ShowPosts extends Component
@@ -11,6 +12,8 @@ class ShowPosts extends Component
     public $sort = 'id';
     public $direction = 'desc';
 
+    // Para recibir informacion por la url crea una propiedad y un metodo mount para el parametro y asignalo a la propiedad
+    #[On('render')]
     public function render()
     {
         $posts = Post::where('title', 'like', '%'. $this->search .'%')

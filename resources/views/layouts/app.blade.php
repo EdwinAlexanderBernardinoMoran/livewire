@@ -21,6 +21,8 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -46,5 +48,10 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            Livewire.on('alert', data => {
+                Swal.fire(data[0])
+            })
+        </script>
     </body>
 </html>
